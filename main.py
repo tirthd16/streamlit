@@ -11,6 +11,7 @@ header {visibility: hidden;}
 '''
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
+asdfsf
 st.logo(image='logo.png')
 import hero
 import intro
