@@ -23,7 +23,6 @@ with col1:
 with col2:
     st.image("banner.jpg")
 st.divider()
-import hero
 import intro
 import projects
 import feature
