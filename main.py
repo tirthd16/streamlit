@@ -8,4 +8,5 @@ import hero
 import intro
 import projects
 import feature
-
+import pricing
+import cta

@@ -6,6 +6,8 @@ data = pd.read_csv('csv/amazon_data.csv')
 
 # Number of Bought vs. Sales Scatter Plot
 
+st.caption('Data from amazon and flipkart for insights on computer peripherals market')
+st.download_button('Download sample data',data='another',key='amazon')
 tab1,tab2,tab3 = st.tabs(['Price vs Sales','Rating','Title'])
 with tab1:
     chart_data = data[['Price', 'Sales','ReviewCount','sponsored']].dropna()
@@ -21,12 +23,20 @@ with tab2:
 with tab3:
     from wordcloud import WordCloud
     import matplotlib.pyplot as plt
+    import streamlit as st  # Assuming you're using Streamlit for display
 
-# Generate word cloud
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(' '.join(data['Title'].dropna()))
+# Generate word cloud with dark background and light text
+    wordcloud = WordCloud(
+        width=800,
+        height=400,
+        background_color='black',  # Dark background
+        colormap='Pastel1'         # Light color map for words
+    ).generate(' '.join(data['Title'].dropna()))
 
 # Display the word cloud
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
+    plt.gca().set_facecolor('black')  # Set figure background color to dark
     st.pyplot(plt)
+

@@ -5,11 +5,10 @@ st.divider()
 st.markdown('''
 ### Demo Dashboards
 ''')
-st.caption('Note: The data represented below is taken from a small subset of our previous projects. Thus prone to unreliability')
-with st.expander('**Test**'):
-    st.download_button('Download sample data',data='test')
-    import test
+st.caption('Please note that the data below is from a small sample of our past projects, so it may not be completely reliable.')
 with st.expander('**Computer peripherals market**'):
     import amazon
-with st.expander('**Medical Professionals**'):
-    st.text('asdf')
+with st.expander('**Real Estate market**'):
+    import maharera
+with st.expander('**Economic Events**'):
+    import stock

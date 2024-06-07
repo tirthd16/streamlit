@@ -1,8 +1,7 @@
 import streamlit as st
+st.markdown('## How?')
+st.caption('Our process is straightforward and hassle-free, so you can focus on what you do best—growing your business.')
 st.markdown('''
-
-## What We Do
-
 #### 1. Understand Your Data Needs
 We start by **listening to you**. What kind of data do you need? From which sources? Our team will work closely with you to understand your specific requirements, ensuring that we scrape the data that matters most to your business.
 
