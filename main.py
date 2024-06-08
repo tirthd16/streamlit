@@ -8,10 +8,10 @@ from projects import *
 from feature import *
 from pricing import *
 from works import *
-works()
+# works()
 # st.logo(image='logo.png')
-# hero() 
-# intro() 
-# projects() 
-# feature() 
-# pricing() 
+hero() 
+intro() 
+projects() 
+feature() 
+pricing() 
