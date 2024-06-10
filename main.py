@@ -8,10 +8,18 @@ from projects import *
 from feature import *
 from pricing import *
 from works import *
-# works()
+from test import *
 # st.logo(image='logo.png')
+test()
 hero() 
 intro() 
 projects() 
+works()
 feature() 
 pricing() 
+hide_streamlit_style= """<style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
