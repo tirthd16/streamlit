@@ -5,11 +5,17 @@ def school():
     import altair as alt
     import numpy as np
     data = pd.read_csv('csv/school.csv')  
+    def convert_df(df):
+        # IMPORTANT: Cache the conversion to prevent computation on every rerun
+        return df.to_csv(index=False).encode("utf-8")
+
+    csv = convert_df(data)
+
 
 # Number of Bought vs. College Readiness Scatter Plot
 
     st.caption('Benchmarks and demographics for schools across USA')
-    st.download_button('Download sample data',data='csv/school.csv',key='def')
+    st.download_button('Download sample data',data=csv,key='def', file_name='usa_school.csv', mime='csv')
     tab1,tab2 = st.tabs(['rank vs College Readiness','Student-Teacher Ratio'])
     with tab1:
         chart_data = data[['rank', 'College Readiness','State']].dropna()

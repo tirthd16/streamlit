@@ -3,8 +3,17 @@ def stock():
     import pandas as pd
     import altair as alt
     import numpy as np
+    data = pd.read_csv('csv/stock.csv')  
+    data2 = pd.read_csv('csv/mortgage.csv')  
+    @st.cache_data
+    def convert_df(data):
+        # IMPORTANT: Cache the conversion to prevent computation on every rerun
+        return data.to_csv(index=False).encode("utf-8")
+
+    csv = convert_df(data)
+    csv2 = convert_df(data2)
     st.caption('Economic market information')
-    st.download_button('Download sample data',data='mortgage.csv',key='stock')
+    st.download_button('Download sample data',data=csv2,key='stock', file_name="economic_market_sample.csv", mime='csv')
     tabs1,tabs2 = st.tabs(['Reliance Historical','U.S. Mortgage Rate'])
     with tabs1:
         data = pd.read_csv('csv/stock.csv')  
