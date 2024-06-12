@@ -19,9 +19,9 @@ def maharera():
     st.pydeck_chart(pdk.Deck(
         map_style=None,
         initial_view_state=pdk.ViewState(
-            latitude=latmean,
-            longitude=lonmean,
-            zoom=5,
+            latitude=latmean-0.8,
+            longitude=lonmean-1.8,
+            zoom=8,
             pitch=50,
         ),
         layers=[
