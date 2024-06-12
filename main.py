@@ -10,13 +10,7 @@ from pricing import *
 from works import *
 from test import *
 # st.logo(image='logo.png')
-test()
-hero() 
-intro() 
-projects() 
 works()
-feature() 
-pricing() 
 hide_streamlit_style= """<style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
