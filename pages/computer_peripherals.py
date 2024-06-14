@@ -80,20 +80,21 @@ def amazon():
 
 # Calculate average sales for combined sponsored and non-sponsored
         combined_df = data.groupby('Rating').agg({'Sales': 'mean'}).reset_index()
+        sponsored_true_ratings = np.array(sponsored_true['Rating'])
+        sponsored_true_sales = np.array(sponsored_true['Sales'])
+        sponsored_false_ratings = np.array(sponsored_false['Rating'])
+        sponsored_false_sales = np.array(sponsored_false['Sales'])
+        ratings = combined_df['Rating'].to_numpy()
+        sales = combined_df['Sales'].to_numpy()
+
 
 # Plotting
         fig, ax = plt.subplots(figsize=(10, 6))
         fig.patch.set_facecolor('#2E2E2E')
         ax.set_facecolor('#2E2E2E')
-
-# Plot sponsored true line
-        ax.plot(sponsored_true['Rating'], sponsored_true['Sales'], label='Sponsored', marker='o', color='#1f77b4')
-
-# Plot sponsored false line
-        ax.plot(sponsored_false['Rating'], sponsored_false['Sales'], label='Not Sponsored', marker='o', color='#ff7f0e')
-
-# Plot combined line
-        ax.plot(combined_df['Rating'], combined_df['Sales'], label='Combined', marker='o', linestyle='--', color='#2ca02c')
+        ax.plot(sponsored_true_ratings, sponsored_true_sales, label='Sponsored', marker='o', color='#1f77b4')
+        ax.plot(sponsored_false_ratings, sponsored_false_sales, label='Not Sponsored', marker='o', color='#ff7f0e')
+        ax.plot(ratings, sales, label='Combined', marker='o', linestyle='--', color='#2ca02c')
 
 # Add labels and title with light color
         ax.set_xlabel('Rating', color='white')
