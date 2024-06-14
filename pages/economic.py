@@ -3,6 +3,17 @@ def stock():
     import pandas as pd
     import altair as alt
     import numpy as np
+    st.set_page_config(initial_sidebar_state="collapsed")
+    st.markdown(
+        """
+    <style>
+        [data-testid="collapsedControl"] {
+            display: none
+        }
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
     data = pd.read_csv('csv/stock.csv')  
     data2 = pd.read_csv('csv/mortgage.csv')  
     @st.cache_data

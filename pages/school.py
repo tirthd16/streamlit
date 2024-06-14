@@ -4,6 +4,17 @@ def school():
     import pandas as pd
     import altair as alt
     import numpy as np
+    st.set_page_config(initial_sidebar_state="collapsed")
+    st.markdown(
+        """
+    <style>
+        [data-testid="collapsedControl"] {
+            display: none
+        }
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
     data = pd.read_csv('csv/school.csv')  
     def convert_df(df):
         # IMPORTANT: Cache the conversion to prevent computation on every rerun

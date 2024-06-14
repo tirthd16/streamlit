@@ -2,6 +2,17 @@ def maharera():
     import streamlit as st
     import pandas as pd
     import pydeck as pdk
+    st.set_page_config(initial_sidebar_state="collapsed")
+    st.markdown(
+        """
+    <style>
+        [data-testid="collapsedControl"] {
+            display: none
+        }
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
     df = pd.read_csv('csv/mahacord.csv')
     df2 = pd.read_csv('csv/maharera.csv')
     @st.cache_data

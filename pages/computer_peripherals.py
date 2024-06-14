@@ -5,6 +5,17 @@ def amazon():
     import pandas as pd
     import altair as alt
     import numpy as np
+    st.set_page_config(initial_sidebar_state="collapsed")
+    st.markdown(
+        """
+    <style>
+        [data-testid="collapsedControl"] {
+            display: none
+        }
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
     data = pd.read_csv('csv/amazon_data.csv')  
     @st.cache_data
     def convert_df(data):
