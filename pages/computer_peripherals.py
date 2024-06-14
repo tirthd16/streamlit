@@ -1,7 +1,5 @@
 def amazon():
     from collections import Counter
-    import nltk
-    from nltk.corpus import stopwords
     import matplotlib.pyplot as plt
     import streamlit as st
     import pandas as pd
