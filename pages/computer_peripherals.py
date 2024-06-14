@@ -26,7 +26,7 @@ def amazon():
 
 # Number of Bought vs. Sales Scatter Plot
 
-    st.caption('Data from amazon and flipkart for insights on computer peripherals market')
+    st.caption('Data from amazon and etsy for insights on computer peripherals market')
     st.download_button('Download sample data',data=csv,key='amazon', mime='csv', file_name='amazon_sample.csv')
     tab2,tab3,tab1 = st.tabs(['Keyword Analysis','Avg sales for sponsored','Price vs Sales'])
     with tab1:
@@ -52,7 +52,7 @@ def amazon():
 
         st.header('Revenue Analysis')
         total_revenue = data['Revenue'].sum()
-        st.write(f'Total Revenue: ${total_revenue:,.2f}')
+        st.write(f'Total Revenue (May 2024): ${total_revenue:,.2f}')
 
 # Display common keywords
         st.header('Common Keywords in Titles')
