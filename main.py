@@ -12,7 +12,6 @@ from works import *
 from test import *
 # st.logo(image='logo.png')
 st.set_page_config(initial_sidebar_state="collapsed")
-
 st.markdown(
     """
 <style>
